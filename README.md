@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 1. download template  
 2. Link to preconfigured start.spring.io  
 3. Unarchive, open folder in terminal and in IDE  
@@ -56,3 +57,6 @@ VALUES ('Comp','Desc','11111111-1111-1111-1111-111111111111');
 
 INSERT INTO details (name, material, component_id)
 VALUES ('Detail','Steel',1);
+=======
+# production03
+>>>>>>> f88ec3e42b7df7406f9d838389b2160b1a46a382
