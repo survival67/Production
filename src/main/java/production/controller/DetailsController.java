@@ -1,12 +1,9 @@
 package production.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 import production.model.Details;
-import production.repository.DetailsRepository;
+import production.services.DetailsService; // Підключаємо Сервіс
 
 import java.util.List;
 
@@ -14,19 +11,35 @@ import java.util.List;
 @RequestMapping("/api/v1/details")
 public class DetailsController {
 
-    private final DetailsRepository detailsRepository;
+    private final DetailsService detailsService;
 
-    public DetailsController(DetailsRepository detailsRepository) {
-        this.detailsRepository = detailsRepository;
+    public DetailsController(DetailsService detailsService) {
+        this.detailsService = detailsService;
     }
 
+    // Отримати всі
     @GetMapping
     public ResponseEntity<List<Details>> getAllDetails() {
-        return ResponseEntity.ok(detailsRepository.findAll());
+        return ResponseEntity.ok(detailsService.findAll());
     }
 
-    @GetMapping("/component/{componentId}")
+    // Отримати по ID вузла
+    @GetMapping("/details_component/{componentId}")
     public ResponseEntity<List<Details>> getDetailsByComponent(@PathVariable Integer componentId) {
-        return ResponseEntity.ok(detailsRepository.findByComponentId(componentId));
+        return ResponseEntity.ok(detailsService.findByComponentId(componentId));
+    }
+
+    // Додати/Оновити 
+    @PostMapping("/details_save")
+    public ResponseEntity<String> saveDetail(@RequestBody Details detail) {
+        detailsService.save(detail);
+        return ResponseEntity.ok("Detail saved successfully");
+    }
+
+    // Видалити
+    @PostMapping("/details_delete/{id}")
+    public ResponseEntity<String> deleteDetail(@PathVariable Integer id) {
+        detailsService.deleteById(id);
+        return ResponseEntity.ok("Detail deleted successfully");
     }
 }

@@ -8,5 +8,6 @@ public record Details(
     @Id Integer id, 
     String name, 
     String material, 
+    Integer quantity, // поле для кількості деталей
     Integer componentId // Зовнішній ключ на Components
 ) {}
