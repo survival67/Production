@@ -1,9 +1,13 @@
 services:
+<<<<<<< HEAD
   # PostgreSQL
+=======
+>>>>>>> 7adadccd91c69313aa7d5caf4e8f22ee1ad413f6
   postgres:
     image: postgres:16
     environment:
       - POSTGRES_DB=mydatabase
+<<<<<<< HEAD
       - POSTGRES_USER=${DB_LOGIN}
       - POSTGRES_PASSWORD=${DB_PASSWORD}
     ports:
@@ -38,3 +42,14 @@ volumes:
 networks:
   production-network:
     driver: bridge
+=======
+      - POSTGRES_PASSWORD=newpass  
+      - POSTGRES_USER=myuser
+    ports:
+      - "5433:5432"            
+    volumes:
+      - lab3_data_final:/var/lib/postgresql/data 
+      - ./sql_schema:/docker-entrypoint-initdb.d
+volumes:
+  lab3_data_final:
+>>>>>>> 7adadccd91c69313aa7d5caf4e8f22ee1ad413f6

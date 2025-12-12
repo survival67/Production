@@ -1,6 +1,7 @@
 package production.test;
 
 import org.junit.jupiter.api.Test;
+<<<<<<< HEAD
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
@@ -68,3 +69,15 @@ class ProductionApplicationTests {
         assertTrue(exists, "Продукт має бути збережений у базі даних");
     }
 }
+=======
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class ProductionApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}
+>>>>>>> 7adadccd91c69313aa7d5caf4e8f22ee1ad413f6

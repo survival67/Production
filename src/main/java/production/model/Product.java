@@ -20,7 +20,11 @@ public class Product implements Persistable<UUID> {
     private boolean isNew = true;
 
     public Product() {}
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 7adadccd91c69313aa7d5caf4e8f22ee1ad413f6
     public Product(UUID id, String name, String serialNumber, String category) {
         this.id = id;
         this.name = name;
@@ -28,12 +32,23 @@ public class Product implements Persistable<UUID> {
         this.category = category;
     }
 
+<<<<<<< HEAD
     public void setId(UUID id) {
         this.id = id;
+=======
+    public void setIsNew(boolean isNew) {
+        this.isNew = isNew;
+    }
+
+    @Override
+    public boolean isNew() {
+        return isNew; 
+>>>>>>> 7adadccd91c69313aa7d5caf4e8f22ee1ad413f6
     }
 
     @Override
     public UUID getId() { return id; }
+<<<<<<< HEAD
 
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
@@ -48,4 +63,9 @@ public class Product implements Persistable<UUID> {
 
     @Override
     public boolean isNew() { return isNew; }
+=======
+    public String getName() { return name; }
+    public String getSerialNumber() { return serialNumber; }
+    public String getCategory() { return category; }
+>>>>>>> 7adadccd91c69313aa7d5caf4e8f22ee1ad413f6
 }
