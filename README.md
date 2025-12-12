@@ -5,7 +5,7 @@
 
 ---
 
-## Cтек стек
+## Cтек
 
 * **Java 21**
 * **Spring Boot 3** (Web, Data JDBC, Security)
@@ -30,7 +30,7 @@
 
 ---
 
-## 📋 Початок роботи
+## Початок роботи
 
 ### 1. Вимоги
 * Встановлений **Docker Desktop**.
@@ -99,4 +99,3 @@ spring.datasource.username=myuser
 spring.datasource.password=newpass
 debug=true
 spring.jpa.properties.hibernate.jdbc.time_zone=UTC
->>>>>>> 7adadccd91c69313aa7d5caf4e8f22ee1ad413f6
